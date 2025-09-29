@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CollectMate</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CollectMate</h1>
+    <button id="toggleTheme">Thema wisselen</button>
+  </header>
+  <nav>
+    <button onclick="showSection('library')">📚 Bibliotheek</button>
+    <button onclick="showSection('coins')">💰 Muntencollectie</button>
+  </nav>
+  <main>
+    <section id="library" class="active">
+      <h2>📚 Digitale Bibliotheek</h2>
+      <form id="bookForm">
+        <input type="text" id="bookTitle" placeholder="Titel" required>
+        <input type="text" id="bookType" placeholder="Type (boek/tijdschrift)" required>
+        <input type="text" id="bookDescription" placeholder="Beschrijving">
+        <input type="text" id="bookPath" placeholder="Bestandspad of URL">
+        <button type="submit">Toevoegen</button>
+      </form>
+      <ul id="bookList"></ul>
+    </section>
+
+    <section id="coins">
+      <h2>💰 Munt- en Bankbiljetverzameling</h2>
+      <form id="coinForm">
+        <input type="text" id="coinName" placeholder="Naam" required>
+        <input type="number" id="coinYear" placeholder="Jaar" required>
+        <input type="text" id="coinCountry" placeholder="Land" required>
+        <select id="coinType">
+          <option value="munt">Munt</option>
+          <option value="biljet">Biljet</option>
+        </select>
+        <input type="text" id="coinValue" placeholder="Waarde">
+        <label><input type="checkbox" id="coinOwned"> In bezit</label>
+        <button type="submit">Toevoegen</button>
+      </form>
+      <ul id="coinList"></ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
